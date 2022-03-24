@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} Choose your own Madlibs! {% endblock %}
+
+{% block content %}
+<h1 class="pt-4 mb-3 text-center">Choose Your Madlib!</h1>
+
+<div class="dropdown">
+  <form action="/questions" class="pb-4">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   Story List
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    {% for story in story_list %}
+    <label>{{ word }}</label>
+    <input type="submit" class="dropdown-item" value="{{story}}">{{story}}</input>
+    {% endfor %}
+  </div>
+</form>
+</div>
+
+
+{% endblock %}

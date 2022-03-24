@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from flask_debugtoolbar import DebugToolbarExtension
 
-from stories import silly_story
+from stories import STORY_LIST
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "secret"
@@ -12,14 +12,23 @@ debug = DebugToolbarExtension(app)
 @app.get("/questions")
 def display_questions():
     """ Display each word from the prompt """
+    user_choice = request.args
+    print(user_choice)
+    return render_template("questions.html", prompts = STORY_LIST[user_choice].prompts)
 
-    return render_template("questions.html", prompts = silly_story.prompts)
+
+# @app.get("/story")
+# def retrieve_answers():
+#     """ Retrieve answers from form """
+
+#     story = silly_story.generate(request.args)
+#     return render_template("story.html", story = story)
 
 
-@app.get("/story")
-def retrieve_answers():
-    """ Retrieve answers from form """
+@app.get("/choose")
+def display_choice():
+    "display user choice page"
 
-    story = silly_story.generate(request.args)
-    return render_template("story.html", story = story)
+    return render_template("choose.html", story_list = STORY_LIST)
+
 
