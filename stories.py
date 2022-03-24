@@ -51,5 +51,15 @@ excited_story = Story(
     """OMG!! OMG!! I love to {verb} a {noun}!"""
 )
 
+pizza_story = Story(
+    ["adjective_1", "nationality","person", "noun_1", "adjective_2", "noun_2", "adjective_3", "adjective_4", "plural_noun",
+    "noun_3", "number_1", "shapes","food_1", "food_2", "number_2"],
+    """Pizza was invented by a {adjective_1} {nationality} chef named {person}.
+    To make pizza you need to take a lump of {noun_1}, and make a thin, round {adjective_2} {noun_2}.
+    Then you cover it with {adjective_3} sauce , {adjective_4} cheese, and fresh chopped {plural_noun}.
+    Next you have to bake it in a very hot {noun_3}. When it is done, cut it into {number_1}
+    {shapes}. Some kids like {food_1} pizza the best, but my favorite is the {food_2} pizza.
+    If i could, I would eat pizza {number_2} times a day!"""
+)
 
-STORY_LIST = {"silly" : silly_story, "exicted" : excited_story}
+STORY_LIST = {"silly" : silly_story, "exicted" : excited_story, "pizza" : pizza_story}

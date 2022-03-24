@@ -12,8 +12,7 @@
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     {% for story in story_list %}
-    <label>{{ word }}</label>
-    <input type="submit" class="dropdown-item" value="{{story}}">{{story}}</input>
+    <button class="dropdown-item form-control" name="story" value={{story}} type="submit" aria-label="{{story}}">{{story}}</button>
     {% endfor %}
   </div>
 </form>
